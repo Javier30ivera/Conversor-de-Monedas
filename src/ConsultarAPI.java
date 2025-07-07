@@ -7,11 +7,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConsultarAPI {
-
+    private String key = "6dbc7b4f786e9846cf226620";
     public double convertir(String base,String destino) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://v6.exchangerate-api.com/v6/6dbc7b4f786e9846cf226620/latest/" +base))
+                .uri(URI.create("https://v6.exchangerate-api.com/v6/"+key+"/latest/" +base))
                 .build();
         HttpResponse<String> response = null;
         try {
